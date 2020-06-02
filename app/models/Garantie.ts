@@ -1,5 +1,5 @@
-import {Entity, ObjectID, ObjectIdColumn, Column, BeforeInsert, BeforeUpdate} from "typeorm";
-import {IsNumber} from 'class-validator';
+import {Entity, ObjectID, ObjectIdColumn, Column, BeforeInsert, BeforeUpdate, IsNull} from "typeorm";
+import {IsNotEmpty, IsNumber} from 'class-validator';
 
 @Entity({ name: "garantie" })
 export class Garantie {
@@ -7,7 +7,8 @@ export class Garantie {
     @ObjectIdColumn()
     id: ObjectID;
 
-    @Column()
+    @Column({nullable: false})
+    @IsNotEmpty()
     nom: string;
 
     @Column()
@@ -17,7 +18,6 @@ export class Garantie {
     montant: number;
 
     @Column()
+    @IsNotEmpty()
     description: string;
-
-
 }

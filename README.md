@@ -30,6 +30,8 @@ npm run dev
 - [ ] Release bundle
 - [ ] JWT Middleware
 - [ ] Dockerfile
+- [ ] Generator code (Router,Controller)
+
 
 ## License
 Usage is provided under the MIT License. See LICENSE for the full details. \

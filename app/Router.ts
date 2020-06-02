@@ -7,10 +7,10 @@ interface IRouter {
     router: express.Router;
 }
 
-export const Router: IRouter[] = [
+export const Routes: IRouter[] = [
     {
         path: "/api/garantie",
         middleware: [],
         router: (new GarantieRouter()).router,
-    }
+    },
 ];

@@ -2,12 +2,11 @@
  *  @Ta0uf19
  *  Server application class
  */
-
 import * as express from "express";
 import * as http from "http"
 import * as logger from "morgan"
 import {createConnection, Connection} from "typeorm";
-import {Router} from "./Router";
+import {Routes} from "./Router";
 
 export class App {
 
@@ -71,7 +70,7 @@ export class App {
     }
 
     private configureRouter(): void {
-        for(let route of Router) {
+        for(let route of Routes) {
             this.app.use(route.path, route.middleware, route.router)
         }
 

@@ -26,7 +26,7 @@ export class GarantieController extends Controller {
         if (garantie) {
              return this.res.status(200).send(garantie);
         } else {
-             return this.res.status(404).send({ text: "not found" });
+             return this.res.status(404).send({ message: "not found" });
         }
     }
 
@@ -35,9 +35,12 @@ export class GarantieController extends Controller {
      */
     public async add(): Promise<Response> {
         const garantie: Garantie = plainToClass(Garantie, this.req.body);
-        const result = await this.garantieRepository.save(garantie);
-        return this.res.status(200).send(result);
+        const { id } = await this.garantieRepository.save(garantie);
+        const result = await this.garantieRepository.findOne(id);
+
+        return this.res.status(201).send(result);
     }
+
     /**
      * Update
      */
