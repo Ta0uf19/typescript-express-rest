@@ -1,8 +1,7 @@
 import {Controller} from "../core/Controller";
 import { Request, Response } from "express";
-import {Repository, getConnection, ObjectID} from "typeorm";
+import {Repository, getConnection} from "typeorm";
 import {Garantie} from "../models/Garantie";
-import {validate, ValidationError} from 'class-validator';
 import {plainToClass} from "class-transformer";
 
 export class GarantieController extends Controller {
@@ -14,11 +13,19 @@ export class GarantieController extends Controller {
         this.garantieRepository = getConnection().getRepository(Garantie);
     }
 
+    /**
+     * Get all entities
+     * @return Promise<Response>
+     */
     public async all(): Promise<Response> {
         const list = await this.garantieRepository.find();
         return this.res.send(list);
     }
 
+    /**
+     * Find entity by id
+     * @return Promise<Response>
+     */
     public async find(): Promise<Response> {
         const { id } = this.req.params as unknown as { id: string };
 
@@ -31,7 +38,8 @@ export class GarantieController extends Controller {
     }
 
     /**
-     * Ajouter
+     * Add new entity
+     * @return Promise<Response>
      */
     public async add(): Promise<Response> {
         const garantie: Garantie = plainToClass(Garantie, this.req.body);
@@ -42,7 +50,8 @@ export class GarantieController extends Controller {
     }
 
     /**
-     * Update
+     * Update entity
+     * @return Promise<Response>
      */
     public async update(): Promise<Response> {
         const { id } = this.req.params as unknown as { id: string };
@@ -59,7 +68,8 @@ export class GarantieController extends Controller {
     }
 
     /**
-     * Supprimer
+     * Delete entity
+     * @return Promise<Response>
      */
     public async delete(): Promise<Response> {
         const { id } = this.req.params as unknown as { id: string };
