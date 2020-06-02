@@ -12,7 +12,6 @@
 	/App.ts (Server configuration)
 	/Router.ts (Config file for Routing)
 
-config.ts (Config file for the app)
 tsconfig.json (File configuration typescript)
 tslint.json (File configuration rules typescript)
 Entry.ts (Main file to start the app)
