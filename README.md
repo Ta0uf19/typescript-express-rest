@@ -1,5 +1,5 @@
-#Starter template Rest
-#### TypeScript + TypeOrm + ExpressJS + Validator Middleware
+# Starter template to build Rest
+#### TypeScript + NodeJS + TypeOrm + ExpressJS + Validator Middleware
 ## Structure
 ```
 /app
