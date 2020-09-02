@@ -35,4 +35,4 @@ npm run dev
 
 ## License
 Usage is provided under the MIT License. See LICENSE for the full details. \
-Copyright © 2020, Taoufik Tribki, Aymane Rizke
+Copyright © 2020, Taoufik Tribki
