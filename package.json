@@ -10,7 +10,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "express": "~4.17.3",
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.8",
     "morgan": "~1.9.1",
